@@ -1,0 +1,63 @@
+# =============================================
+#  enterprise-agent-system  (Python 3.11+)
+#  Backend dependencies — pinned to compatible
+#  stable versions. Grouped by responsibility.
+# =============================================
+
+# ---------- Core web framework ----------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+python-dotenv==1.0.1
+
+# ---------- LangChain / LangGraph (LLM 编排) ----------
+langchain==0.3.14
+langchain-core==0.3.34
+langchain-community==0.3.14
+langchain-text-splitters==0.3.5
+langchain-openai==0.3.3
+langgraph==0.2.62
+
+# ---------- Model 提供方 (OpenAI + 兼容网关) ----------
+openai==1.59.7
+tiktoken==0.8.0
+
+# ---------- MCP (Model Context Protocol) ----------
+fastmcp==2.2.2
+mcp==1.6.0
+
+# ---------- 向量库 / 检索 ----------
+chromadb==0.5.23
+langchain-chroma==0.1.4
+# 本地 embedding 备用（EMBEDDING_PROVIDER=sentence_transformers 时启用）。
+# 默认使用 DashScope 的 qwen3.7-text-embedding-flash（无需本依赖）
+sentence-transformers==3.3.1
+# PDF 知识库文档入库解析（scripts/ingest_kb.py 可选依赖）
+pypdf==5.1.0
+
+# ---------- 数据库 ----------
+# MySQL 连接
+PyMySQL==1.1.1
+# ORM / 迁移
+SQLAlchemy==2.0.36
+alembic==1.14.0
+# Redis 客户端
+redis==5.2.1
+
+# ---------- 工具库 ----------
+httpx==0.28.1
+requests==2.32.3
+pyyaml==6.0.2
+python-json-logger==3.2.1
+rich==13.9.4
+tenacity==9.0.0
+orjson==3.10.13
+
+# ---------- 测试 / 开发 ----------
+pytest==8.3.4
+pytest-asyncio==0.25.0
+respx==0.21.1
+ruff==0.8.6
+mypy==1.14.1

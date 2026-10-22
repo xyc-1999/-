@@ -1,0 +1,47 @@
+# =============================================
+#  enterprise-agent-system  运行时最小依赖
+#  启动 API 服务所需的核心包（不含本地 embedding /
+#  torch / PDF 解析等可选能力）。快速上手：
+#     pip install -r requirements-core.txt
+# =============================================
+
+# ---------- Core web framework ----------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+python-dotenv==1.0.1
+
+# ---------- LangChain / LangGraph ----------
+langchain==0.3.14
+langchain-core==0.3.34
+langchain-community==0.3.14
+langchain-text-splitters==0.3.5
+langchain-openai==0.3.3
+langgraph==0.2.62
+
+# ---------- Model 提供方 ----------
+openai==1.59.7
+tiktoken==0.8.0
+
+# ---------- 向量库（DashScope/OpenAI embedding 均无需本地模型） ----------
+# Docker(python:3.11) 下用 0.3 栈：langchain-chroma 0.1.4 <= chromadb<0.6
+chromadb==0.5.23
+langchain-chroma==0.1.4
+# PDF 知识库文档解析（上传/入库可用）；PyMuPDF 作为扫描/图片型 PDF 的 fallback 提取器
+pypdf==5.1.0
+pymupdf==1.24.10
+
+# ---------- 数据库 ----------
+PyMySQL==1.1.1
+SQLAlchemy==2.0.36
+alembic==1.14.0
+redis==5.2.1
+
+# ---------- 工具库 ----------
+httpx==0.28.1
+requests==2.32.3
+pyyaml==6.0.2
+rich==13.9.4
+orjson==3.10.13

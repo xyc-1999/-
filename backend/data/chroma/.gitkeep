@@ -1,0 +1,2 @@
+# 数据占位文件：保持空目录可被 git 追踪
+# docs/, chroma/, uploads/ 均使用持久卷存放，不提交到 git

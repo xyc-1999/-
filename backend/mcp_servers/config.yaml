@@ -1,0 +1,11 @@
+# MCP 服务器注册表：被 app.mcp.client 读取，用于连接外部工具服务器。
+servers:
+  database-assist:
+    command: python
+    args:
+      - -m
+      - mcp_servers.core.database_server
+  # 业务系统示例（可继续扩展）
+  # erp-integration:
+  #   command: python
+  #   args: ["-m", "mcp_servers.demos.erp_server"]

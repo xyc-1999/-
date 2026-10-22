@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.venv
+venv
+.env
+logs
+backend/data/chroma
+backend/data/uploads
+.git
+test
+tests
+*.md
+.gitkeep
