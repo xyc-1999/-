@@ -295,24 +295,5 @@ pytest -m integration   # 集成测试（需 MySQL/Redis 已启动）
 
 ---
 
-## 路线图（建议扩展）
-
-已实现：
-- [x] 前端流式响应（SSE / EventSource 逐字打字机，`cache: no-store` 透传）
-- [x] 会话列表按时间/活跃度排序（`recent` / `oldest` / `messages`）
-- [x] 会话删除（后端清 Redis，刷新持久）
-- [x] 知识库前端上传（`.txt/.md/.pdf`，扫描件友好报错）
-- [x] 工单面板（右侧抽屉 `GET /api/v1/tickets`）
-
-待扩展：
-- [ ] Alembic 数据库迁移管理
-- [ ] JWT 鉴权接入业务用户体系
-- [ ] 可视化 Agent 编排 / 观测（LangSmith / 自研 trace）
-- [ ] 多智能体协作（Manager/Worker 模式）
-- [ ] ChromaDB 独立容器化部署
-- [ ] CI/CD（GitHub Actions 构建镜像）
-
----
-
 ## License
 内部项目，保留所有权利。
