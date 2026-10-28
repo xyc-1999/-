@@ -11,6 +11,19 @@
 | 前端 | Next.js 14 (App Router), Tailwind CSS, Shadcn UI |
 | 编排 | Docker Compose 一键启动中间件 |
 
+## 界面效果
+
+下面是运行中的前端主界面（深色科技主题）：
+
+![前端主界面：左侧历史会话侧边栏、中间对话区、顶部服务状态栏](docs/screenshots/ui-overview.png)
+
+界面分区说明：
+
+1. **左侧会话侧边栏**：历史会话列表，支持按最近活跃 / 最早创建 / 消息数三种排序；可新建会话、删除单个会话（删除会同步清除后端 Redis 记录，刷新后不再出现）。
+2. **中央对话主区**：支持逐字流式打字机效果（EventSource 接后端 SSE）、Markdown 渲染 + 代码高亮、Agent 思考过程折叠面板。
+3. **右侧工单抽屉**：点击顶部「我的工单」按钮展开，拉取 `GET /api/v1/tickets` 展示当前用户工单卡片。
+4. **底部健康状态栏**：MySQL / Redis / Chroma 三服务实时状态灯（每秒轮询 `/api/v1/health`）。
+
 ---
 
 ## 目录结构
